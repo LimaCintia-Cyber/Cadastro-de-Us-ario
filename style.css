@@ -1,0 +1,141 @@
+/* 🌞 Tema claro padrão */
+:root {
+  --bg-color: #f0f4f8;
+  --container-bg: #ffffff;
+  --text-color: #2c3e50;
+  --primary-color: #3498db;
+  --input-bg: #ecf0f1;
+  --border-radius: 10px;
+  --transition-speed: 0.3s;
+}
+
+/* 🌙 Tema escuro */
+body.dark-mode {
+  --bg-color: #1e1e1e;
+  --container-bg: #2c2c2c;
+  --text-color: #ecf0f1;
+  --primary-color: #00bcd4;
+  --input-bg: #3a3a3a;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* 🧩 Container principal */
+.container {
+  background-color: var(--container-bg);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* 📝 Título */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: var(--primary-color);
+}
+
+/* 🌗 Botão de tema */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color var(--transition-speed);
+}
+
+.theme-toggle:hover {
+  color: #1abc9c;
+}
+
+/* 🧱 Formulário em grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.form-group input {
+  padding: 12px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  font-size: 15px;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.form-group input:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+/* ✅ Botão de envio */
+form button[type="submit"] {
+  grid-column: span 2;
+  padding: 14px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+form button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+/* 📱 Responsividade */
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  form button[type="submit"] {
+    grid-column: span 1;
+  }
+}
+
+/* ✨ Animação de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
